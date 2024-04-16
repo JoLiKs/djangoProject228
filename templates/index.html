@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body {
+        background-image: url("{% static 'photo.jpg' %}");
+    }
+</style>
+<body>
+<img src="{% static '' %}">
+<h1>Hello</h1>
+
+<h1>Ваш логин: {{ login }}</h1>
+<h1>Ваш пароль: {{ pass }}</h1>
+<script>
+
+</script>
+</body>
+</html>
