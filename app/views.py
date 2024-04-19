@@ -33,6 +33,8 @@ def page404(request, **kwargs):
 
 @csrf_exempt
 def reg(request):
+    if len(request.COOKIES.items()) > 0:
+        return redirect('/profile/')
     if request.method == 'POST':
         login = request.POST['email']
         password = request.POST['password']
@@ -48,6 +50,8 @@ def reg(request):
 
 @csrf_exempt
 def auth(request):
+    if len(request.COOKIES.items()) > 0:
+        return redirect('/profile/')
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']

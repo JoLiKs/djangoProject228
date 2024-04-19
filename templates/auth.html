@@ -7,11 +7,37 @@
     <title>AUTH</title>
 </head>
 <body style="background-color: cadetblue; display: flex; justify-content: center; align-items: center; height: 95vh">
+<style>
+    .mycontainer {
+        background-color: mediumspringgreen;
+        border-radius: 35px;
+        height: 400px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .mycontainer input {
+        width: 250px;
+        height: 50px;
+        padding: 1rem;
+        border-radius: 15px;
+        margin-bottom: 10px;
+    }
+    h3 {
+        margin-bottom: 60px;
+        margin-left: 40px;
+    }
+</style>
+<div class="mycontainer">
 <form action="" method="post" id="form">
-    <input name="email" class="form-control" placeholder="Введите Email"><br>
-     <input name="password" class="form-control" placeholder="Введите пароль"><br>
-    <input id='send' class="btn btn-success" value="Войти" type="submit">
+    <h3>Авторизация</h3>
+    <input name="email" placeholder="Введите Email"><br>
+     <input name="password" placeholder="Введите пароль"><br>
+    <button id='send' class="btn btn-success">Войти</button>
 </form>
+    </div>
 <h1 style="color: red">{{ msg }}</h1>
 <script>
     let inputs = document.getElementsByTagName('input')

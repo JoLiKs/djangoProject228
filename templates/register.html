@@ -6,16 +6,48 @@
     <title>REGISTER</title>
 </head>
 <body style="background-color: darkorange; display: flex; justify-content: center; align-items: center; height: 95vh">
+<style>
+    .mycontainer {
+        background-color: mediumspringgreen;
+        border-radius: 35px;
+        height: 400px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .mycontainer input {
+        width: 250px;
+        height: 50px;
+        padding: 1rem;
+        border-radius: 15px;
+        margin-bottom: 10px;
+    }
+    h3 {
+        margin-bottom: 60px;
+        margin-left: 40px;
+    }
+</style>
+<div class="mycontainer">
+
 <form action="" method="post" id="form">
-    <input name="email" class="form-control" placeholder="Введите Email"><br>
-     <input name="password" class="form-control" placeholder="Введите пароль"><br>
-     <input class="form-control" placeholder="Введите повтор пароля"><br>
-    <input id='send' class="btn btn-primary" value="Зарегистрироваться" type="submit">
+     <h3>Регистрация</h3>
+    <input name="email" placeholder="Введите Email"><br>
+     <input name="password"  placeholder="Введите пароль"><br>
+     <input  placeholder="Введите повтор пароля"><br>
+    <button id='send' class="btn btn-primary">Зарегистрироваться</button>
 
 </form>
+    </div>
 <script>
     let inputs = document.getElementsByTagName('input')
     form.onsubmit = (e) => {
+        if (!inputs[0].value.includes('@')) {
+            e.preventDefault()
+            alert('В вашем email нет собачки')
+            return
+        }
         if (inputs[0].value.replaceAll(' ', '') === '' || inputs[1].value.replaceAll(' ', '') === '') {
             e.preventDefault()
             alert('Есть пустые поля!')
