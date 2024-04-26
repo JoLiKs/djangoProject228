@@ -1,0 +1,26 @@
+input {
+    width: 300px;
+    height: 55px;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: cadetblue;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    font-weight: bold;
+}
+img {
+    border-radius: 20px;
+}
+button {
+    width: 300px;
+    height: 75px;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: cadetblue;
+    margin-right: 20px;
+    font-family: Menlo, Consolas, "Andale Mono", "Lucida Console", monospace;
+    margin-bottom: 20px;
+    font-size: 22px;
+}

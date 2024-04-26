@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}" >
+</head>
+<body>
+<img src="{% static 'photo.jpg' %}" alt="Картинка не была загружена!">
+<form action="" method="post">
+    <input name="inp1" placeholder="Введите имя">
+    <input name="inp2" placeholder="Введите телефон">
+    <input name="inp3" placeholder="Введите адрес">
+    <button>Отправить</button>
+</form>
+
+{{ msg }}
+</body>
+</html>

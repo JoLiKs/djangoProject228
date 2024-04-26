@@ -1,8 +1,10 @@
+import os
+
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 
-from app.models import ModelEgor
+from app.models import ModelEgor, ModelTest12
 
 
 # Create your views here.
@@ -16,6 +18,7 @@ def profile(request):
     if request.method == 'POST':
         html = redirect('/auth/')
         html.delete_cookie('isAuth')
+        html.delete_cookie('name')
         return html
     try:
         if request.COOKIES['isAuth'] == 'true':
@@ -60,6 +63,22 @@ def auth(request):
             if i.name == email and i.password == password:
                 html = redirect('/profile/')
                 html.set_cookie('isAuth', 'true')
+                html.set_cookie('name', i.name)
+                print('asd')
                 return html
         return render(request, 'auth.html', {'msg': 'Неверный логин или пароль'})
     return render(request, 'auth.html')
+
+@csrf_exempt
+def name(request):
+    if request.method == 'POST':
+        name_obj = ModelTest12()
+        name_obj.namekk = request.POST['inp1']
+        name_obj.namesfdm = request.POST['inp2']
+        name_obj.password2 = request.POST['inp3']
+        print(name_obj.namekk, name_obj.password2, name_obj.namesfdm)
+
+        name_obj.save()
+        print('ko')
+        return render(request, 'name.html', {'msg': 'Данные успешно отправлены в базу данных'})
+    return render(request, 'name.html')

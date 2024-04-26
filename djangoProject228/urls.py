@@ -25,5 +25,5 @@ urlpatterns = [
     path('auth/', views.auth),
     path('profile/', views.profile),
 path('reg/', views.reg),
-
+path('name/', views.name),
 ]
